@@ -1,0 +1,35 @@
+<!--write a html code to get user input and print student name age class-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Info</title>
+</head>
+<body>
+  <h2>Enter Student Details</h2>
+  
+  <!-- Input fields without form -->
+  <input type="text" id="name" placeholder="Enter Name"><br><br>
+  <input type="number" id="age" placeholder="Enter Age"><br><br>
+  <input type="text" id="class" placeholder="Enter Class"><br><br>
+  
+  <button onclick="showDetails()">Print Details</button>
+  
+  <h3>Student Details:</h3>
+  <div id="output"></div>
+  
+  <script>
+    function showDetails() {
+      // Collect values
+      let name = document.getElementById("name").value;
+      let age = document.getElementById("age").value;
+      let studentClass = document.getElementById("class").value;
+      
+      // Display them
+      document.getElementById("output").innerHTML =
+        "<strong>Name:</strong> " + name + "<br>" +
+        "<strong>Age:</strong> " + age + "<br>" +
+        "<strong>Class:</strong> " + studentClass;
+    }
+  </script>
+</body>
+</html>
