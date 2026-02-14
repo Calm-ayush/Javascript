@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let multiply = (a,b) => {
+  return a+b;
+};
+let a=5;
+let b=5;
+console.log(multiply(5,5));
+
+
+//expression function
+const square=function(n){
+    return n*n;
+}
+console.log(square(2));
+
+function sumArray(arr) {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
+// Taking input
+let n = Number(prompt("Enter size of array:"));
+let arr = [];
+
+for (let i = 0; i < n; i++) {
+  arr[i] = Number(prompt("Enter element " + (i + 1)));
+}
+
+let result = sumArray(arr);
+console.log("Sum of array elements:", result);
+
+function reverseNumber(num) {
+  let rev = 0;
+
+  while (num > 0) {
+    let digit = num % 10;
+    rev = rev * 10 + digit;
+    num = Math.floor(num / 10);
+  }
+
+  return rev;
+}
+
+let num = Number(prompt("Enter a number:"));
+
+let reverse = reverseNumber(num);
+console.log("Reverse number:", reverse);
+
+function fibonacci(n) {
+  let a = 0, b = 1, c;
+
+  console.log("Fibonacci Series:");
+
+  for (let i = 1; i <= n; i++) {
+    console.log(a);
+
+    c = a + b;
+    a = b;
+    b = c;
+  }
+}
+
+let n = Number(prompt("Enter number of terms:"));
+
+fibonacci(n);
+
+function isArmstrong(num) {
+  let temp = num;
+  let sum = 0;
+  let digits = num.toString().length;
+
+  while (temp > 0) {
+    let digit = temp % 10;
+    sum += Math.pow(digit, digits);
+    temp = Math.floor(temp / 10);
+  }
+
+  if (sum === num) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let num = Number(prompt("Enter a number:"));
+
+if (isArmstrong(num)) {
+  console.log(num + " is an Armstrong number");
+} else {
+  console.log(num + " is NOT an Armstrong number");
+}
+    </script>
+</body>
+</html>

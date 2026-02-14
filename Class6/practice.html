@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function calculateSum(arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      return sum;
+    }
+
+    function showSum() {
+      let input = document.getElementById("numArray").value;
+      let numbers = input.split(",").map(Number);
+      let result = calculateSum(numbers);
+      document.getElementById("result").innerText = "Sum of array elements: " + result;
+    }
+
+    
+
+        
+    </script>
+    
+</body>
+</html>
+#using functions
+#input array from user print sum of all elements of numbers of array
+#check armstrong
+#print reverse
+#print fibonacci series
