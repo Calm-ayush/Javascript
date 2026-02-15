@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            const countries2 = ['Albania','Bolivia','Canada','Denmark','Ethiopia','Finland','Germany','Hungary','Ireland','Iceland','Japan','Kenya','United States'];
+    const webTechs = ['HTML','CSS','JavaScript','React','Node','MongoDB'];
+    const mernStack = ['MongoDB','Express','React','Node'];
+
+    const countriesCopy = [...countries2];
+
+    const sortedCountries = [...countries2].sort();
+    console.log(sortedCountries);
+
+    const landCountries2 = countries2.filter(country =>country.toLowerCase().includes('land'));
+    console.log(landCountries2);
+
+    const longestCountry2 = countries2.reduce((longest, current) =>current.length > longest.length ? current : longest);
+    console.log(longestCountry2);
+
+    const fourCharCountries = countries2.filter(country =>country.length === 4);
+    console.log(fourCharCountries);
+
+    const multiWordCountries = countries2.filter(country =>country.trim().split(' ').length >= 2);
+    console.log(multiWordCountries);
+
+    const reversedCapitalized = [...countries2].reverse().map(country => country.toUpperCase());
+    console.log(reversedCapitalized);
+    </script>
+</body>
+</html>
