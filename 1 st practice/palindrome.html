@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let a = Number(prompt("Enter a number"));
+    let temp=a
+    let b=0
+    while(temp>0){
+        let c=temp%10
+        b=b*10+c
+        temp=Math.floor(temp/10)
+    }
+    if(b===a){
+        console.log("palindrome")
+    }
+    else{
+        console.log("not")
+    }
+    </script>
+</body>
+</html>
