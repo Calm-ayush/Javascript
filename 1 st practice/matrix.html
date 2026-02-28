@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let rows = Number(prompt("How many rows?"));
+    let cols = Number(prompt("How many columns?"));
+    let matrix = [];
+
+    for (let i = 0; i < rows; i++) {
+        matrix[i] = [];
+     for (let j = 0; j < cols; j++) {
+        matrix[i][j] = Number(prompt(`Value at row ${i + 1}, col ${j + 1}:`));
+    }
+}
+
+console.log("Here’s your matrix:");
+matrix.forEach(row => console.log(row.join(" ")));
+    </script>
+</body>
+</html>
