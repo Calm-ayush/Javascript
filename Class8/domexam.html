@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Asabeneh Vetayeh challenge in</h1>
+        <h2>30DaysofJavaScript Challenge</h2>
+        <ul>
+            <li>30DaysofPython Challenge Done</li>
+            <li>30DaysofJavascript Challenge Ongoing</li>
+            <li>30DaysofReact Challenge Coming</li>
+            <li>30DaysofFullStack Challenge Coming</li>
+            <li>30DaysofDataAnalysis Challenge Coming</li>
+            <li>30DaysofReactNative Challenge Coming</li>
+            <li>30DaysofMachineLearning Challenge Coming</li>
+        </ul>
+    </div>
+
+    <!-- 
+            The year color is changing every 1 second
+            The date and time background color is changing every on seconds
+            Completed challenge has background green
+            Ongoing challenge has background yellow
+            Coming challenges have background red   -->
+
+ <script>
+    const h1 = document.querySelector('h1');
+    const h2 = document.querySelector('h2');
+    const listItems = document.querySelectorAll('li');
+
+    const yearSpan = document.createElement('span');
+    yearSpan.textContent = ' 2020';
+    h1.appendChild(yearSpan);
+
+    function randomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    setInterval(() => {
+        yearSpan.style.color = randomColor();
+    }, 1000);
+
+    const dateTime = document.createElement('div');
+    dateTime.style.padding = '10px';
+    dateTime.style.marginTop = '10px';
+    dateTime.style.textAlign = 'center';
+    h2.appendChild(dateTime);
+
+    function updateDateTime() {
+        const now = new Date();
+        dateTime.textContent = now.toLocaleString();
+    }
+
+    setInterval(() => {
+        updateDateTime();
+        dateTime.style.backgroundColor = randomColor();
+    }, 1000);
+
+    // Challenge list styling
+    listItems.forEach(li => {
+        if (li.textContent.includes('Done')) {
+            li.style.backgroundColor = 'green';
+        } else if (li.textContent.includes('Ongoing')) {
+            li.style.backgroundColor = 'yellow';
+        } else {
+            li.style.backgroundColor = 'red';
+        }
+    });
+</script>
+    
+</body>
+</html>
