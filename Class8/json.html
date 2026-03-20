@@ -125,6 +125,11 @@ console.log(marriedtringify)
 
 const studenttringify=JSON.stringify(student)
 console.log(studenttringify)
+
+//Stringify the students object with only firstName, lastName and skills properties
+const studentFiltered = JSON.stringify(student, ['firstName', 'lastName', 'skills'], 4);
+console.log(studentFiltered);
+
     </script>   
 </body>
 </html>
