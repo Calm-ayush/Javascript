@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;   
+            align-items: flex-start;   
+            height: 100vh;             
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;        
+            margin-top: 20px;          
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button type="submit">Submit</button>
+        </form>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        function addTask(){
+            const input = document.getElementByIda("taskInput");
+            const taskText = input.value.trim();
+            if(taskText === "") return;
+            
+            const li = document.createElement("li");
+            li.textContent = taskText;
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "Delete";
+            deleteBtn.onclick = function(){
+                li.remove();
+            };
+            li.appendChild(deleteBtn);
+
+            document.getElementById("taskList").appendChild(li);
+        }
+
+         
+    </script>
+</body>
+</html>
