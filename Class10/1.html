@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Generator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .number {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .even {
+            background-color: green;
+        }
+
+        .odd {
+            background-color: yellow;
+            color: black;
+        }
+
+        .prime {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Number Generator</h1>
+    <input type="number" id="NumberInput" placeholder="Enter number">
+    <button onclick="generateNumbers()">Generate</button>
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById("container");
+
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+        function generateNumbers() {       
+        const n = document.getElementById("NumberInput").value;
+        container.innerHTML = "";
+        for (let i = 1; i <= n; i++) {
+            const div = document.createElement("div");
+            div.classList.add("number");
+            div.textContent = i;
+
+            if (isPrime(i)) {
+                div.classList.add("prime");
+            } else if (i % 2 === 0) {
+                div.classList.add("even");
+            } else {
+                div.classList.add("odd");
+            }
+
+            container.appendChild(div);
+        }
+    }
+    </script>
+
+</body>
+</html>
