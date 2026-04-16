@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <input type="password" id="password" placeholder="Enter your password">
+        <input type="tel" id="contact" placeholder="Enter your contact number">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(e) {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let contact = document.getElementById("contact").value.trim();
+            let password = document.getElementById("password").value.trim();
+
+            if(name === ""){
+                alert("Name cannot be empty");
+                e.preventDefault();
+            }
+            if(!email.includes("@")){
+                alert("Email must contain @");
+                e.preventDefault();
+            }
+            let contactPattern = /^[0-9]{10}$/;
+            if(!contactPattern.test(contact)){
+                alert("Contact number must be 10 digits");
+                e.preventDefault();
+            }
+            let passwordPattern = /^(?=.*[A-Z])(?=.*\d).{6,}$/;
+            if(!passwordPattern.test(password)){
+                alert("Password must be at least 6 characters long, contain at least one uppercase letter and one number");
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
