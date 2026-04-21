@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <script>
+        console.log(window.document.title);
+        console.log(window.history.length);
+        console.log(window.location.href);
+        console.log(window.navigator.userAgent);
+        window.alert("Hello World");
+        if(window.history.length){
+            console.log("History length:"+window.history.length);
+            // window.history.back();
+            // window.history.forward();
+            window.history.go(2);
+            console.log("Current State:"+window.history.state);
+        }
+    </script>
+    
+</body>
+</html>
