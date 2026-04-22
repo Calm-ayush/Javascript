@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //get the navigator object
+        const nav = window.navigator;
+        //get the name of the 
+        const browserName = nav.appName;
+        const browserVersion = nav.appVersion;
+        const userAgent = nav.userAgent;
+        const browserLanguage = nav.language;
+        const os = nav.platform;
+    </script>
+    <script>
+        console.log(`Browswer Version: ${browserVersion}`);
+        console.log(`User Agent: ${userAgent}`);
+        console.log(`Browser Language: ${browserLanguage}`);
+        console.log(`Operating System: ${os}`);
+        const currentURL = window.location.href;
+        console.log(currentURL);
+        
+    </script>
+    
+</body>
+</html>
