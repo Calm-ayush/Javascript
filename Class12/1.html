@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    #list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid black;
+      list-style: none;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1 id="1"></h1>
+
+<ul id="list">
+  <li>a</li>
+  <li>b</li>
+  <li>c</li>
+</ul>
+
+<button id="btn">Add student</button> 
+
+<script>
+
+  //1
+  const heading = document.getElementById("1");
+  heading.innerText = "abc";
+  heading.style.color = "red";
+  heading.style.fontSize = "30px";
+  heading.style.textAlign = "center";
+
+  // 2
+  const list = document.getElementById("list");
+
+  // 3
+  const listall = document.querySelectorAll("#list li");
+  listall.forEach(function(item) {
+    item.style.color = "red";
+    item.style.padding = "10px";
+    item.style.margin = "5px";
+    item.style.border = "1px solid black";
+    item.style.listStyle = "none";
+  });
+
+  //4
+  const btn = document.getElementById("btn");
+  btn.addEventListener("click", function() {
+    const newStudent = document.createElement("li");
+    newStudent.innerText = "New Student";
+    newStudent.style.backgroundColor = "yellow";
+
+    list.appendChild(newStudent);
+  });
+
+  // 5
+  list.addEventListener("click", function(e) {
+    if (e.target.tagName === "LI") {
+      e.target.remove();
+    }
+  });
+
+</script>
+
+</body>
+</html>
