@@ -1,0 +1,27 @@
+#write a function power , which will take 2 integer (num,pow) as argument and return the num raised to the power pow
+#if pow < 0 then return -1 else return num raised to power pow
+#take input in one line
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Function</title>
+</head>
+<body>
+    <script>
+        function power(num, pow) {
+            if (pow < 0) {
+                return -1;
+            }
+            return Math.pow(num,pow);  
+        }
+
+        let input = prompt();
+        let [num, pow] = input.split(" ");
+
+        console.log(`${power(num, pow)}`);
+    </script>
+</body>
+</html>
