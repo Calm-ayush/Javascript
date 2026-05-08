@@ -1,0 +1,46 @@
+#Imagine you are a developer for a big company. Every year the HR manager has to manually calculate pay raises 
+for hundreds of employees. You job is to write a small program that does this automatically! Take an Employee 
+Object, calculate their new salary based on their performance, mark them as an "Active" member of the team, and 
+return the updated record
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Update</title>
+</head>
+<body>
+    <script>
+        const employee = {
+            name: "Riya",
+            department: "HR",
+            salary: 40000,
+            performance: "Excellent"
+        };
+
+        function updateEmployee(employee) {
+            let increment = 0;
+
+            if (employee.performance === "Excellent") {
+                increment = 0.20;
+            } else if (employee.performance === "Good") {
+                increment = 0.10;
+            } else {
+                increment = 0.05;
+            }
+
+            employee.salary = employee.salary + (employee.salary * increment);
+
+            employee.status = "Active";
+            employee.statusTag = `[${employee.status}]`;
+
+            return employee;
+        }
+
+        let updatedEmployee = updateEmployee(employee);
+
+        console.log(updatedEmployee);
+    </script>
+</body>
+</html>
