@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let x = parseInt(prompt("Enter entry time:"));
+    let y = parseInt(prompt("Enter exit time:"));
+    let c = 0;
+    if (y < x) {
+        console.log("Invalid time");
+    } 
+    else {
+        let timeleft = y - x;
+        if (timeleft > 10) {
+            c = 200;
+        } 
+        else if (timeleft <= 2) {
+            c = timeleft * 20;
+        } 
+        else if (timeleft <= 5) {
+            c = (2 * 20) + (timeleft - 2) * 15;
+        } 
+        else { 
+            c = (2 * 20) + (3 * 15) + (timeleft - 5) * 10;
+        }
+        console.log("Total cost:", c);
+    }
+</script>
+</body>
+</html>
