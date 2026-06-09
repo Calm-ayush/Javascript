@@ -18,7 +18,7 @@ function mergeUnique(arr1, arr2) {
     console.log(arr3);
 
 }
-const array1 = [1, 2, 3];
-const array2 = [2, 3, 5];
+const array2 = [1, 2, 3];
+const array1 = [2, 3, 5];
 
-mergeUnique(array1, array2);
+mergeUnique(array2, array1);
